@@ -1,0 +1,47 @@
+[mysqld]
+skip-host-cache
+skip-name-resolve
+
+############################
+# General query log section
+############################
+# general_log_file = /var/log/mysql/mysql_general.log
+# general_log = 1
+
+##########################
+# Slow query Log section
+##########################
+# slow query will be logged if it runs longer than 2 secs.
+long_query_time = 2
+slow_query_log = 'ON'
+slow_query_log_file = /var/log/mysql/mysql-slow.log
+log-queries-not-using-indexes
+
+########################################################
+# Charset setting
+# Setting default character set to utf8mb4 to store character with more than 3 bytes in a character.
+########################################################
+character-set-client-handshake = FALSE
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+
+#####################################
+# Performance tuning
+#####################################
+connect_timeout = 600
+net_read_timeout = 600
+net_write_timeout = 600
+max_allowed_packet = 256M
+innodb_stats_on_metadata = 0
+
+
+# Fix the "Cannot read first page of './ibdata1' I/O error on Windows 10."
+#innodb_flush_method=littlesync
+innodb_use_native_aio=0
+#innodb_flush_method=O_DSYNC
+
+[client]
+default-character-set = utf8mb4
+
+[mysql]
+default-character-set = utf8mb4

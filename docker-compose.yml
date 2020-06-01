@@ -1,0 +1,41 @@
+version: "3"
+volumes:
+  Docker_LAMP_mysql_data:
+    driver: local
+services:
+  php:
+    build: './php/'
+    networks:
+      - backend
+    volumes:
+      - ./public_html/:/var/www/html/
+  apache:
+    build: './apache/'
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - frontend
+      - backend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public_html/:/var/www/html/
+      
+    
+  mysql:
+    build: './mysql/'
+    networks:
+      - backend
+    environment:
+      - TZ=${REGION}/${COUNTRY}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWD}
+    volumes:
+      - Docker_LAMP_mysql_data:/var/lib/mysql  ## This is used exclusively for Windows 10 as the self designated share folder is not working properly.
+      ## Uncomment following line if your operating systems work properly with self designated share folder. Also, comment the above line.
+      #- ./mysql/data:/var/lib/mysql           
+      - ./mysql/conf/:/etc/mysql/conf.d
+      - ./mysql/log/:/var/log/mysql
+networks:
+  frontend:
+  backend:

@@ -1,0 +1,7 @@
+# exclude everything
+public_html/*
+
+# exception to the rule
+!public_html/index.php
+!public_html/phpinfo.php
+!public_html/phpmyadmin
