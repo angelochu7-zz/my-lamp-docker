@@ -42,18 +42,19 @@ It is my wish to build an easy to use and stable version of LAMP on Docker. The 
    - Windows - https://docs.docker.com/docker-for-windows/install/
    - MacOS - https://docs.docker.com/docker-for-mac/install/ 
 2. Download or clone the source code
-3. Unzip(if download) the source code and change directory to **my-docker-lamp-master**
-4. Type ***docker-compose up -d*** to start the LAMP stack on docker
-5. Type http://localhost:8080/phpinfo.php to verify php interpreter is working successfully. You should be able to see the php information in your browser
-6. Type http://localhost:8080/yourawesomeprojectname/ to access your project website
-7. To administer your database, type http://localhost:8080/phpmyadmin/ with username "**root**" and password "**passwdmysql**"
-8. Type ***docker-compose stop*** to stop the LAMP stack on docker
+3. Unzip(if download) the source code
+4. Open the command prompt and change directory to the unzip source code folder **my-lamp-docker-master**
+5. Type ***docker-compose up -d*** to start the LAMP stack on docker
+6. Type http://localhost:8080/phpinfo.php to verify php interpreter is working successfully. You should be able to see the php information in your browser
+7. Type http://localhost:8080/yourawesomeprojectname/ to access your project website
+8. To administer your database, type http://localhost:8080/phpmyadmin/ with username "**root**" and password "**passwdmysql**"
+9. Type ***docker-compose stop*** to stop the LAMP stack on docker
 
 ### FAQ
 Q: How do I read the log file for the web server, PHP interpreter and MySQL server?
 
 A: You can simply type ***docker logs -f container_id*** to read the above logs. To list the container id of web server, PHP interpreter and MySQL server, just type ***docker ps -a***
 
+Q: The time in the container is not right. How can I change it?
 
-
-
+A: You can change the timezone to your location by modifying Dockerfile located in php, mysql and apache folder.
