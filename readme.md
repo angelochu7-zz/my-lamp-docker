@@ -43,7 +43,7 @@ It is my wish to build an easy to use and stable version of LAMP on Docker. The 
    - MacOS - https://docs.docker.com/docker-for-mac/install/ 
 2. Download or clone the source code
 3. Unzip(if download) the source code
-4. Open the command prompt and change directory to the unzip source code folder **my-lamp-docker-master**
+4. Open the command prompt and change directory to the unzip source code folder **my-lamp-docker-master** . If it's cloned, you can skip this process.
 5. Type ***docker-compose up -d*** to start the LAMP stack on docker
 6. Type http://localhost:8080/phpinfo.php to verify php interpreter is working successfully. You should be able to see the php information in your browser
 7. Type http://localhost:8080/yourawesomeprojectname/ to access your project website
