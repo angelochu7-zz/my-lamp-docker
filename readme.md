@@ -68,7 +68,7 @@ A: You may follow the instructions as below:
 
 2.	Modify the file docker-compose.yml as below (Line 24)
 
-![Specify upload folder]("img/docker-compose-yml_upload.PNG")
+![Specify upload folder](img/docker-compose-yml_upload.PNG)
 
 The above line mentioned how upload folder should be mapped between upload folder on apache container and local folder
 
