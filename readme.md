@@ -64,7 +64,7 @@ Q: How do I specify the upload folder for my project?
 A: You may follow the instructions as below:
 
 
-1.	Stop containers by changing directory to the repository folder (e.g. cd my-lamp-docker) and then type ***docker-compose stop***
+1.	Stop containers by changing directory to the repository folder (***e.g. cd my-lamp-docker***) and then type ***docker-compose stop***
 
 2.	Modify the file docker-compose.yml as below (Line 24)
 
