@@ -64,11 +64,11 @@ Q: How do I specify the upload folder for my project?
 A: You may follow the instructions as below:
 
 
-1.	Stop containers by changing directory to the repository folder (e.g. cd my-lamp-docker) and then type docker-compose stop
+1.	Stop containers by changing directory to the repository folder (e.g. cd my-lamp-docker) and then type ***docker-compose stop***
 
 2.	Modify the file docker-compose.yml as below (Line 24)
 
-<img src="./img/docker-compose-yml_upload.PNG"
+<img src="img/docker-compose-yml_upload.PNG"
 raw=true
 alt=“Specify upload folder”
 style=“margin-right: 10px;”
@@ -76,6 +76,6 @@ style=“margin-right: 10px;”
 
 The above line mentioned how upload folder should be mapped between upload folder on apache container and local folder
 
-3.	Start the LAMP by typing command docker-compose up -d 
+3.	Start the LAMP by typing command ***docker-compose up -d*** 
 4.	The upload folder will be /var/www/html/ojs_upload, which can be specified in the upload section of your installation page in your project. 
 5.	Done!
