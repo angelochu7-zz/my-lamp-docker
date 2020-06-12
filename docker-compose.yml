@@ -4,15 +4,17 @@ volumes:
     driver: local
 services:
   php:
-    build: './php/'
-    args:                                                                     
-      - PHP_VER=${PHP_VERSION}
-      - REGION=${REGION}
-      - COUNTRY=${COUNTRY}
+    build: 
+      context: ./php/
+      args:                                                                     
+        - PHP_VER=${PHP_VERSION}
+        - REGION=${REGION}
+        - COUNTRY=${COUNTRY}
     networks:
       - backend
     volumes:
       - ./public_html/:/var/www/html/
+  
   apache:
     build: './apache/'
     depends_on:
@@ -25,8 +27,7 @@ services:
       - "8080:80"
     volumes:
       - ./public_html/:/var/www/html/
-      
-    
+        
   mysql:
     build: './mysql/'
     networks:
