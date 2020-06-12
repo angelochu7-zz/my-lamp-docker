@@ -5,6 +5,10 @@ volumes:
 services:
   php:
     build: './php/'
+    args:                                                                     
+      - PHP_VER=${PHP_VERSION}
+      - REGION=${REGION}
+      - COUNTRY=${COUNTRY}
     networks:
       - backend
     volumes:
