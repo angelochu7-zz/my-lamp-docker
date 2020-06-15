@@ -29,7 +29,11 @@ services:
       - ./public_html/:/var/www/html/
         
   mysql:
-    build: './mysql/'
+    build: 
+      context: './mysql/'
+      args:
+        - REGION=${REGION}
+        - COUNTRY=${COUNTRY}
     networks:
       - backend
     environment:
