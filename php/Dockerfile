@@ -1,7 +1,7 @@
 ARG PHP_VER
+FROM php:${PHP_VER}-fpm-alpine
 ARG REGION
 ARG COUNTRY
-FROM php:${PHP_VER}-fpm-alpine
 ARG PHP_INI_DIR=/usr/local/etc/php/
 RUN apk update && apk upgrade;
 RUN apk add \
