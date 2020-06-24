@@ -6,7 +6,7 @@ It is my wish to build an easy to use and stable version of LAMP on Docker. The 
 
 ## PHP version
 
-7.1 
+7.1, 7.2, 7.3, 7.4 
 
 ## MySQL version
 
@@ -44,11 +44,12 @@ It is my wish to build an easy to use and stable version of LAMP on Docker. The 
 2. Download or clone the source code
 3. Unzip(if download) the source code
 4. Open the command prompt and change directory to the unzip source code folder **my-lamp-docker-master** . If it's cloned, you can skip this process.
-5. Type ***docker-compose up -d*** to start the LAMP stack on docker
-6. Type http://localhost:8080/phpinfo.php to verify php interpreter is working successfully. You should be able to see the php information in your browser
-7. Type http://localhost:8080/yourawesomeprojectname/ to access your project website
-8. To administer your database, type http://localhost:8080/phpmyadmin/ with username "**root**" and password "**passwdmysql**"
-9. Type ***docker-compose stop*** to stop the LAMP stack on docker
+5. Edit the .env from the above folder to specify the timezone and PHP version.
+6. Type ***docker-compose up -d*** to start the LAMP stack on docker
+7. Type http://localhost:8080/phpinfo.php to verify php interpreter is working successfully. You should be able to see the php information in your browser
+8. Type http://localhost:8080/yourawesomeprojectname/ to access your project website
+9. To administer your database, type http://localhost:8080/phpmyadmin/ with username "**root**" and password "**passwdmysql**"
+10. Type ***docker-compose stop*** to stop the LAMP stack on docker
 
 ### FAQ
 Q: How do I read the log file for the web server, PHP interpreter and MySQL server?
